@@ -10,6 +10,9 @@
 
 #ifdef __unix__
 #include <time.h>
+#else
+#include <chrono>
+#include <thread>
 #endif // __unix__
 
 #include "serverException.hpp"

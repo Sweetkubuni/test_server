@@ -1,7 +1,6 @@
-#include "serverException.hpp"
 #include "server.hpp"
 #include "room.hpp"
-
+#include "serverException.hpp"
 /*'
 
     NOTE: inorder to change the KEEP-ALIVE for TCP, you can do the following :

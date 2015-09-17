@@ -1,4 +1,5 @@
-
+#include "control.hpp"
+#include <iostream>
 control::control()
 {
     keep_alive = true;

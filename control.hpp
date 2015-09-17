@@ -1,6 +1,6 @@
 #ifndef CONTROL_HPP
 #define CONTROL_HPP
-
+#include "threadsafe_queue.hpp"
 class control
 {
     protected:
