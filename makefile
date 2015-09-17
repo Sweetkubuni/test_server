@@ -27,7 +27,7 @@ clean:
 app: test.o
 	$(CXX) $^ -o $@ $(CFLAGS)
 
-%:.c
-	$(CXX) -c $< $(CXXFLAGS)
+test.o:
+	$(CXX) -c test.cpp -o test.o $(CXXFLAGS)
 
 .PHONY: debug release clean
