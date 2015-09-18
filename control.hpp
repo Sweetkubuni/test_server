@@ -4,8 +4,8 @@
 class control
 {
     protected:
-	thread_safe::queue< std::string > out_mq;
-	thread_safe::queue< std::string > in_mq;
+	threadsafe::queue< std::string > out_mq;
+	threadsafe::queue< std::string > in_mq;
 	unique_ptr<std::thread> th;
 	bool keep_alive;
 	void run();
