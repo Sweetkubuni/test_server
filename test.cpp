@@ -1,5 +1,5 @@
 #include "server.hpp"
-#include "serverexception.hpp"
+#include "serverException.hpp"
 #include <iostream>
 using namespace std;
 int main(int arg, char ** argv)
