@@ -5,6 +5,8 @@ CXX ?= g++
 CXXFLAGS ?= -Wall \
 	-std=c++11
 
+INCLUDE_PATH ?= test_server
+
 CXXFLAGS_DEBUG := -g3 -O
 
 CXXFLAGS_RELEASE := -O2 -DNDEBUG
@@ -25,9 +27,9 @@ clean:
 	rm test.o app
 
 app: test.o
-	$(CXX) $^ -o $@ $(CXXFLAGS)
+	$(CXX) $^ -o $@ $(CXXFLAGS) -I$(INCLUDE_PATH)
 
 test.o:
-	$(CXX) -c test.cpp -o test.o $(CXXFLAGS)
+	$(CXX) -c test.cpp -o test.o $(CXXFLAGS) -I$(INCLUDE_PATH)
 
 .PHONY: debug release clean
