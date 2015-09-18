@@ -25,9 +25,9 @@ clean:
 	rm test.o app
 
 app: test.o
-	$(CXX) $^ -o $@ $(CXXFLAGS) -I
+	$(CXX) $^ -o $@ $(CXXFLAGS)
 
 test.o:
-	$(CXX) -c test.cpp -o test.o $(CXXFLAGS) -I 
+	$(CXX) -c test.cpp -o test.o $(CXXFLAGS)
 
 .PHONY: debug release clean
