@@ -14,7 +14,7 @@ int main(int arg, char ** argv)
     }
     catch( ServerException & err)
     {
-       ofstream log;
+       std::ofstream log;
 
        log.open("error.txt", ios::out | ios::app );
 
