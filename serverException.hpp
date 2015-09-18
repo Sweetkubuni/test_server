@@ -1,11 +1,12 @@
 #ifndef SERVEREXCEPTION_HPP
 #define SERVEREXCEPTION_HPP
 #include <exception>
-
-struct ServerException : public exception
+#include <string>
+class ServerException : public std::exception
 {
     std::string msg;
 
+    public:
     ServerException(const std::string & err_msg)
     {
         msg = err_msg;
