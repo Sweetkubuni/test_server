@@ -2,6 +2,7 @@
 #define CONTROL_HPP
 #include "threadsafe_queue.hpp"
 #include  <memory>
+#include  <threaD>
 class control
 {
     protected:
