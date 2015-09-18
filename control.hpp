@@ -14,7 +14,7 @@ class control
 	public:
         control();
         ~control();
-        shared_ptr<std::string> receive();
+        std::shared_ptr<std::string> receive();
         void send(const std::string & msg);
 };
 #endif // CONTROL_HPP
