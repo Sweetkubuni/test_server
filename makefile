@@ -26,7 +26,7 @@ release: app
 clean:
 	rm test.o app
 
-app: test.o
+app: test.o server.o room.o user.o control.o
 	$(CXX) $^ -o $@ $(CXXFLAGS) -I$(INCLUDE_PATH)
 
 test.o:
