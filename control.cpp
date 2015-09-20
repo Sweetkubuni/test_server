@@ -28,14 +28,12 @@ void control::run()
        std::shared_ptr<std::string> resp = out_mq.pop();
        if(resp)
        {
-           std::string command = resp->substr(0,4);
-
-           if(command.find("KILLT") != std::string::npos )
+           if(resp->find("KILLT") != std::string::npos )
            {
               std::cout << "Server 1.0 [ ^_^ ] bye!\n";  
               keep_alive = false; 
            }
-           else if(command.compare("RESP") == 0)
+           else if(resp->find("RESP") != std::string::npos)
            {
                std::cout << "Server 1.0 [ O_O ] Server Responded!!\n";
                 std::cout <<  resp->substr(4, std::string::npos) << "\n";
