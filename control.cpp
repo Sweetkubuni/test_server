@@ -23,23 +23,33 @@ void control::run()
     {
         /* clear screen*/
        std::cout << "\033[2J";
+       
        /* Welcome Screen */
-       std::cout << " ___  _          _     ___                            _     ___ " << '\n';
-       std::cout << "|  _>| |_  ___ _| |_  / __> ___  _ _  _ _  ___  _ _  / |   |   |" << '\n';
-       std::cout << "| <__| . |<_> | | |   \__ \/ ._>| '_>| | |/ ._>| '_> | | _ | / |" << '\n';
-       std::cout << "`___/|_|_|<___| |_|   <___/\___.|_|  |__/ \___.|_|   |_|<_>`___'" << '\n';
        std::shared_ptr<std::string> resp = out_mq.pop();
-       while(resp)
+       if(resp)
        {
            std::string command = resp->substr(0,4);
            if(command.size() > 0)
            {
                if(command.compare("KILLT") == 0)
-                    keep_alive = false;
+               {
+                  std::cout << "Server 1.0 [ ^_^ ] bye!\n";  
+                  keep_alive = false; 
+               }
                else if(command.compare("RESP") == 0)
+               {
+                   std::cout << "Server 1.0 [ O_O ] Server Responded!!\n";
                     std::cout <<  resp->substr(4, std::string:npos) << "\n";
+               }
                else
+               {
+                    std::cout << "Server 1.0 [ >_< ] uff!\n";
                     std::cout << "Unexpected Command!\n";
+               }
+           }
+           else
+           {
+              std::cout << "Server 1.0 [^_^ ]\n"; 
            }
            resp = out_mq.pop();
        }
