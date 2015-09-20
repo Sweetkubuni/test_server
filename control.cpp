@@ -57,9 +57,7 @@ void control::run()
        std::cin.getline(line, 256, '\n');
        std::string msg(line);
        if( msg.compare("update") == 0)
-       {
            continue;
-       }
        in_mq.push(msg);
     }
 }
