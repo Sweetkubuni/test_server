@@ -69,11 +69,7 @@ void server::run()
     {
         int clientfd;
         /* wait for accepting clients */
-        if ((clientfd = accept(servfd, (sockaddr *) &client_addr,&client_len)) < 0)
-        {
-            continue;
-        }
-        else /* we have a socket */
+        if ((clientfd = accept(servfd, (sockaddr *) &client_addr,&client_len)) >= 0)
         {
             if(make_socket_non_blocking(clientfd) == -1 )
             {
