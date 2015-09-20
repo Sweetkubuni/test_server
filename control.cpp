@@ -3,10 +3,10 @@
 control::control()
 {
     keep_alive = true;
-    th = unique_ptr<std::thread>(new thread(bind(&consumer::run, this)));
+    th = std::unique_ptr<std::thread>(new std::thread(std::bind(&consumer::run, this)));
 }
 
-shared_ptr<std::string> control::receive()
+std::shared_ptr<std::string> control::receive()
 {
     return in_mq.pop();
 }
@@ -39,7 +39,7 @@ void control::run()
                else if(command.compare("RESP") == 0)
                {
                    std::cout << "Server 1.0 [ O_O ] Server Responded!!\n";
-                    std::cout <<  resp->substr(4, std::string:npos) << "\n";
+                    std::cout <<  resp->substr(4, std::string::npos) << "\n";
                }
                else
                {
