@@ -3,6 +3,7 @@
 #include "serverException.hpp"
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/un.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
@@ -99,7 +100,7 @@ void server::run()
 
         r1.update();
 
-        shared_ptr<std::string> req = panel.receive();
+        std::shared_ptr<std::string> req = panel.receive();
         if(req)
         {
             /* kills the server */
