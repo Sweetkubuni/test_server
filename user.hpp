@@ -13,7 +13,7 @@ class user
    public:
        user(int new_sockfd, char new_delim);
        ~user();
-        int send(const std::string & msg);
+        int send_msg(const std::string & msg);
        bool recieve( std::string & revc_msg);
        bool disconnected();
 };
