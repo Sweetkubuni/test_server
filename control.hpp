@@ -3,6 +3,7 @@
 #include "threadsafe_queue.hpp"
 #include  <memory>
 #include  <thread>
+#include <functional>
 class control
 {
     protected:
