@@ -75,7 +75,7 @@
  {
      for(auto & client : users)
      {
-        client.send(data);
+        client.send_msg(data);
      }
  }
 
