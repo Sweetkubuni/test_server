@@ -29,6 +29,7 @@ void control::run()
        if(resp)
        {
            std::string command = resp->substr(0,4);
+           std::cout << command<<'\n';
            if(command.size() > 0)
            {
                if(command.compare("KILLT") == 0)
