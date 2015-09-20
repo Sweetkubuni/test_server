@@ -14,7 +14,7 @@ user::user(int new_sockfd, char new_delim)
     has_disconnected = false;
 }
 
-int user::send(const std::string & msg)
+int user::send_msg(const std::string & msg)
 {
     out_buffer.append(msg);
     if(out_buffer.size() > 0)
@@ -24,6 +24,7 @@ int user::send(const std::string & msg)
         out_buffer.erase(0,sent);
         return out_buffer.length();
     }
+    return 1;
 }
 
 bool user::recieve( std::string & revc_msg)
