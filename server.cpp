@@ -64,6 +64,7 @@ void server::run()
     struct sockaddr_in client_addr;
     unsigned int client_len = sizeof(sockaddr_in);
     room r1;
+    keep_alive = true;
     while(keep_alive)
     {
         int clientfd;
