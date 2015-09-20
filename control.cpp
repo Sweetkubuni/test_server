@@ -29,30 +29,26 @@ void control::run()
        if(resp)
        {
            std::string command = resp->substr(0,4);
-           std::cout << command<<'\n';
-           if(command.size() > 0)
+
+           if(command.find("KILLT") != std::string::npos )
            {
-               if(command.find("KILLT") != std::string::npos )
-               {
-                  std::cout << "Server 1.0 [ ^_^ ] bye!\n";  
-                  keep_alive = false; 
-               }
-               else if(command.compare("RESP") == 0)
-               {
-                   std::cout << "Server 1.0 [ O_O ] Server Responded!!\n";
-                    std::cout <<  resp->substr(4, std::string::npos) << "\n";
-               }
-               else
-               {
-                    std::cout << "Server 1.0 [ >_< ] uff!\n";
-                    std::cout << "Unexpected Command!\n";
-               }
+              std::cout << "Server 1.0 [ ^_^ ] bye!\n";  
+              keep_alive = false; 
+           }
+           else if(command.compare("RESP") == 0)
+           {
+               std::cout << "Server 1.0 [ O_O ] Server Responded!!\n";
+                std::cout <<  resp->substr(4, std::string::npos) << "\n";
            }
            else
            {
-              std::cout << "Server 1.0 [^_^ ]\n"; 
+                std::cout << "Server 1.0 [ >_< ] uff!\n";
+                std::cout << "Unexpected Command!\n";
            }
-           resp = out_mq.pop();
+       }
+        else
+       {
+          std::cout << "Server 1.0 [^_^ ]\n"; 
        }
        std::cout << "Enter Command:";
        std::cin.getline(line, 256, '\n');
