@@ -6,6 +6,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
+#include <memory>
 /*'
 
     NOTE: inorder to change the KEEP-ALIVE for TCP, you can do the following :
