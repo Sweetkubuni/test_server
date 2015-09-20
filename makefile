@@ -5,8 +5,6 @@ CXX ?= g++
 CXXFLAGS ?= -Wall \
 	-std=c++11
 
-INCLUDE_PATH ?= /test_server
-
 CXXFLAGS_DEBUG := -g3 -O
 
 CXXFLAGS_RELEASE := -O2 -DNDEBUG
