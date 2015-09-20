@@ -21,8 +21,8 @@ release: CXXFLAGS += $(CXXFLAGS_RELEASE)
 release: app
 
 #remove all files
-clean:	app test.o server.o room.o user.o control.o
-	rm -f $^
+clean:
+	rm -f app test.o server.o room.o user.o control.o
 
 app: test.o server.o room.o user.o control.o
 	$(CXX) $^ -o $@ $(CXXFLAGS)
