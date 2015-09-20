@@ -32,7 +32,7 @@ void control::run()
            std::cout << command<<'\n';
            if(command.size() > 0)
            {
-               if(command.compare("KILLT") == 0)
+               if(command.find("KILLT") != std::string::npos )
                {
                   std::cout << "Server 1.0 [ ^_^ ] bye!\n";  
                   keep_alive = false; 
