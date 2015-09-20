@@ -31,7 +31,7 @@ int make_socket_non_blocking(int sfd)
 
 server::server( int Port )
 {
-    if(servfd = socket(PF_INET,SOCK_STREAM, 0) < 0)
+    if((servfd = socket(PF_INET,SOCK_STREAM, 0)) < 0)
         throw ServerException("server error : could not create socket");
 
      sockaddr_in ServAddr;
