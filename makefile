@@ -3,7 +3,7 @@
 CXX ?= g++
 
 CXXFLAGS ?= -Wall \
-	-std=c++11
+	-std=c++11 -pthread
 
 CXXFLAGS_DEBUG := -g3 -O
 
