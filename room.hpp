@@ -1,6 +1,7 @@
 
 #ifndef ROOM_HPP
 #define ROOM_HPP
+#include <vector>
 #include <sys/poll.h>
 #include "user.hpp"
 class room
