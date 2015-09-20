@@ -74,7 +74,7 @@ void server::run()
                 /*should implement a logging feature */
                 std::string err("RESP could not accept ip:");
                 err.append(inet_ntoa(client_addr.sin_addr));
-                panel.notify(resp);
+                panel.notify(err);
             }
         }
         else /* we have a socket */
@@ -83,7 +83,7 @@ void server::run()
             {
                 std::string err("RESP couldn't make non-blocking for ip:");
                 err.append(inet_ntoa(client_addr.sin_addr));
-                panel.notify(resp);
+                panel.notify(err);
             }
             else
             {
