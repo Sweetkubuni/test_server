@@ -2,7 +2,7 @@
 
 
 #ifndef TIME_OUT
-#deinfe TIME_OUT 5000
+#define TIME_OUT 5000
 #endif // TIME_OUT
 
 #define ERROR -1
@@ -46,7 +46,8 @@
         }
         else
         {
-            for(int it = 0; it < ufds.size(); it++)
+            unsigned int len = ufds.size();
+            for(unsigned int it = 0; it < len; it++)
             {
                 if(ufds[it].revents & POLLIN)
                 {
@@ -60,8 +61,8 @@
                         /* remove any clients that have disconnected */
                         if(users[it].disconnected())
                         {
-                            users.remove(users.begin() + it);
-                            ufds.remove(ufds.begin() + it);
+                            users.erase(users.begin() + it);
+                            ufds.erase(ufds.begin() + it);
                         }
                     }
                 }
@@ -84,7 +85,8 @@
     users.push_back(user(new_sockfd, new_delim));
     pollfd new_user;
     new_user.fd = new_sockfd;
-    new_user.event = POLLIN | POLLPRI;
+    new_user.events = POLLIN | POLLPRI;
+    new_user.revents = 0;
     ufds.push_back(new_user);
  }
 
