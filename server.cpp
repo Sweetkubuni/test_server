@@ -105,7 +105,7 @@ void server::run()
         if(req)
         {
             /* kills the server */
-            if(req->compare("KILL") == 0)
+            if(req->find("KILL") != std::string::npos)
             {
                 keep_alive = 0;
             }
