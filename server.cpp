@@ -71,13 +71,7 @@ void server::run()
         /* wait for accepting clients */
         if ((clientfd = accept(servfd, (sockaddr *) &client_addr,&client_len)) < 0)
         {
-            if( (clientfd != EWOULDBLOCK ) || (clientfd != EAGAIN ) )
-            {
-                /*should implement a logging feature */
-                std::string err("RESP could not accept ip:");
-                err.append(inet_ntoa(client_addr.sin_addr));
-                panel.notify(err);
-            }
+            continue;
         }
         else /* we have a socket */
         {
