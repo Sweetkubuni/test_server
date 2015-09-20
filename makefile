@@ -19,17 +19,17 @@ debug: CXXFLAGS += $(CXXFLAGS_DEBUG)
 debug: app
 
 #release section
-release: CXXFLAGS += $(CXXFLAGS_DEBUG)
+release: CXXFLAGS += $(CXXFLAGS_RELEASE)
 release: app
 
 #remove all files
-clean:
-	rm test.o app
+clean:	app test.o server.o room.o user.o control.o
+	rm -f $^
 
 app: test.o server.o room.o user.o control.o
-	$(CXX) $^ -o $@ $(CXXFLAGS) -I$(INCLUDE_PATH)
+	$(CXX) $^ -o $@ $(CXXFLAGS)
 
-test.o:
-	$(CXX) -c test.cpp -o test.o $(CXXFLAGS) -I$(INCLUDE_PATH)
+%.o: %.cpp
+	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 .PHONY: debug release clean
