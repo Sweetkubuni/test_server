@@ -40,7 +40,7 @@ server::server( int Port )
         throw ServerException("server error : could not create socket");
 
      sockaddr_in ServAddr;
-     memset(&ServAddr, 0, sizeof(ServAddr));
+     std::memset(&ServAddr, 0, sizeof(ServAddr));
      ServAddr.sin_family = AF_INET; /* Internet address family */
      ServAddr.sin_addr.s_addr = INADDR_ANY; /* Any incoming interface */
      ServAddr.sin_port = htons(Port); /* Local port */
