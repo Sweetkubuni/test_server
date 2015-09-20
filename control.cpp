@@ -3,7 +3,7 @@
 control::control()
 {
     keep_alive = true;
-    th = std::unique_ptr<std::thread>(new std::thread(std::bind(&consumer::run, this)));
+    th = std::unique_ptr<std::thread>(new std::thread(std::bind(&control::run, this)));
 }
 
 std::shared_ptr<std::string> control::receive()
