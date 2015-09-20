@@ -52,16 +52,6 @@ namespace threadsafe
             std::unique_ptr<node> old_head=pop_head();
             return old_head?old_head->data:std::shared_ptr<T>();
         }
-        void push(const T & new_value)
-        {
-            std::shared_ptr<T> new_data(std::make_shared<T>(std::move(new_value)));
-            std::unique_ptr<node> p(new node);
-            node* const new_tail=p.get();
-            std::lock_guard<std::mutex> tail_lock(tail_mutex);
-            tail->data=new_data;
-            tail->next=std::move(p);
-            tail=new_tail;
-        }
         
         void push(const T & new_value)
         {
