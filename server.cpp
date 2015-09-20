@@ -63,7 +63,7 @@ void server::run()
     room r1;
     while(keep_alive)
     {
-
+        int clientfd;
         /* wait for accepting clients */
         if ((clientfd = accept(servfd, (sockaddr *) &client_addr,&client_len)) < 0)
         {
