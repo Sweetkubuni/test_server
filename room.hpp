@@ -1,9 +1,7 @@
 
 #ifndef ROOM_HPP
 #define ROOM_HPP
-#ifdef __unix__
-#include <poll.h>
-#endif // __unix__
+#include <sys/poll.h>
 #include "user.hpp"
 class room
 {
@@ -15,6 +13,6 @@ class room
         room();
         void update();
         void add_user(int new_sockfd, char new_delim);
-        void user_ping()
+        void user_ping();
 };
 #endif // ROOM_HPP
