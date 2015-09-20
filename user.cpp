@@ -3,11 +3,9 @@
 #ifndef MAX_BYTES_RECIEVE
 #define MAX_BYTES_RECIEVE 1000
 #endif // MAX_BYTES_RECIEVE
-#ifdef __unix__
 #include <sys/types.h>
 #include <sys/socket.h> /* for socket(), connect(), send(), and recv() */
 #include <unistd.h> /* for close() */
-#endif // __unix__
 #define NOTHING_RECIEVED 0
 user::user(int new_sockfd, char new_delim)
 {
