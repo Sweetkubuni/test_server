@@ -1,6 +1,7 @@
 #include "server.hpp"
 #include "room.hpp"
 #include "serverException.hpp"
+#include <fcntl.h>
 /*'
 
     NOTE: inorder to change the KEEP-ALIVE for TCP, you can do the following :
@@ -18,7 +19,7 @@
 #endif
 int make_socket_non_blocking(int sfd)
 {
-  int flag;
+  int flags;
   flags = fcntl (sfd, F_GETFL, 0);
   if (flags == -1)
       return -1;
