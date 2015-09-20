@@ -108,6 +108,7 @@ void server::run()
             if(req->find("KILL") != std::string::npos)
             {
                 keep_alive = 0;
+                panel.notify("KILLT");
             }
         }
     }//while(keep_alive)
