@@ -56,15 +56,14 @@
                     {
                         sendto_all(data);
                     }
-                    else
+                    /*else
                     {
-                        /* remove any clients that have disconnected */
                         if(users[it].disconnected())
                         {
                             users.erase(users.begin() + it);
                             ufds.erase(ufds.begin() + it);
                         }
-                    }
+                    }*/
                 }
             }
         }
