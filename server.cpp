@@ -79,7 +79,7 @@ void server::run()
             }
             else
             {
-                r1.add_user(clientfd, '\n');
+                r1.add_user(clientfd, '@');
 
                 /* update the panel that a new connection occured */
                 std::string info("RESP The following ip has connected:");
